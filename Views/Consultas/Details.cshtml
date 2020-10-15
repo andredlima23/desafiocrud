@@ -1,0 +1,42 @@
+﻿@model WebApplication1.Models.consulta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Consulta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.data_hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paciente.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paciente.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoexame.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoexame.nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.protocolo }) |
+    @Html.ActionLink("Voltar a Lista", "Index")
+</p>

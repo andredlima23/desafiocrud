@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebApplication1.Models.consulta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Consultas</h2>
+
+<p>
+    @Html.ActionLink("Marcar Nova Consulta", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.data_hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paciente.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipoexame.nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_hora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paciente.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoexame.nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.protocolo }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.protocolo }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.protocolo })
+        </td>
+    </tr>
+}
+
+</table>
